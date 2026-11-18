@@ -13,22 +13,31 @@
 			<div class="container">
 			  <h1>Simple Accordions</h1>
 			
-			  <button class="accordion">Website Design and Development</button>
-			  <div class="accordion-content">
+			  <button class="accordion" id="btn-1" aria-expanded="false" aria-controls="box-1">Website Design and Development</button>
+			  <!-- [Hye Ran Yoo] 
+			   I added "aria-expanded" property, because this property notice the status of this region.  
+			   "aria-controls" also was put because this property connect with related region id.
+			   I put the "hidden" because when I check the NVDA, even this region does not show, NVDA read the sentence after press the arrow key.
+			   Also, I put this region ID for "aria-controls", and originally div tag have no meaning, so I apply the role for "region".
+			   "region" role can become a landmark with aria-labelledby, but this region is collapse, NVDA do not know this is landmark, instead, 
+			   after I expand this region, NVDA recognize this region is landmark. 
+			   Others accordion buttons and accordion contents are same way. 
+			   -->
+			  <div class="accordion-content" id="box-1" role="region" hidden aria-labelledby="btn-1"><!-- [Hye Ran Yoo] I put the id, role, hidden and aria-labelledby. -->
 				<p>
 				  Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24/7 website maintenance so that you get all the support you need.
 				</p>
 			  </div>
 			
-			  <button class="accordion">Website Analytics and Performance</button>
-			  <div class="accordion-content">
+			  <button class="accordion" id="btn-2" aria-expanded="false" aria-controls="box-2">Website Analytics and Performance</button><!-- [Hye Ran Yoo]  I put the id, aria-expanded, and aria-controls. -->
+			  <div class="accordion-content" id="box-2" role="region" hidden aria-labelledby="btn-2"><!-- [Hye Ran Yoo] I put the id, role, hidden and aria-labelledby. -->
 				<p>
 				  We believe that in order to have a successful website, you need to constantly adjust and adapt to the data provided by your website visitors. Here at Pierre Web Development, we have narrowed down the specific key performance indicators that will dramatically boost your success with connecting to target markets. We will provide a basic metric dashboard based on how much traffic your site gets, detailed analytical reports that show which parts of your website is the most popular among visitors as well as access to tools you can use to make meaningful decisions based on this data.
 				</p>
 			  </div>
 			
-			  <button class="accordion">Digital Marketing</button>
-			  <div class="accordion-content">
+			  <button class="accordion" id="btn-3" aria-expanded="false" aria-controls="box-3">Digital Marketing</button><!-- [Hye Ran Yoo]  I put the id, aria-expanded, and aria-controls. -->
+			  <div class="accordion-content" id="box-3" role="region" hidden aria-labelledby="btn-3"><!-- [Hye Ran Yoo]  I put the id, role, hidden and aria-labelledby. -->
 				<p>
 				  We know that every great website focuses on helping you get more business and building a brand that your ideal customers will love and support. We can help you set up a great, SEO-focused content strategy, a paid ads campaign, email marketing integration with Mailchimp as well as a social media marketing campaign. We also use popular website analytic tools to track your site's performance and provide you with weekly analytic reports to help bolster your growth.
 				</p>

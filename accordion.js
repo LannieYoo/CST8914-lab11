@@ -21,8 +21,12 @@ accordionBtns.forEach((accordion) => {
     if (content.style.maxHeight) {
       //this is if the accordion is open
       content.style.maxHeight = null;
+      content.hidden=true; //[Hye Ran Yoo] This area is already expanded. "hidden" make accessible tree remove this part, when pressing the button, this accordion content is disappeared.
+      this.setAttribute("aria-expanded", "false"); //[Hye Ran Yoo] When tabbing, NVDA read this accordion status to screen reader as collapsed.
     } else {
       //if the accordion is currently closed
+      content.hidden=false; //[Hye Ran Yoo] This area is already collapse. It add the accessible tree to "hidden" set the false, when pressing the button, this accordion content is appeared.
+      this.setAttribute("aria-expanded", "true"); //[Hye Ran Yoo] When tabbing, NVDA read this accordion status to screen reader as expanded.
       content.style.maxHeight = content.scrollHeight + "px";
       console.log(content.style.maxHeight);
     }
